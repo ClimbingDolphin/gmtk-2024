@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpriteDraggable : MonoBehaviour
 {
+    [SerializeField] private ToyPart toyPart;
+
     private bool dragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
@@ -22,12 +24,28 @@ public class SpriteDraggable : MonoBehaviour
         offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         dragging = true;
     }
+
     private void OnMouseUp()
     {
-        if (GameManager.Instance.GetPointerLocation() != GameManager.PointerLocation.WORKSHOP)
+        if (dragging)
         {
-            transform.position = startPosition;
+            dragging = false;
+            switch (GameManager.Instance.GetPointerLocation())
+            {
+                case GameManager.PointerLocation.WORKSHOP:
+                    break;
+                case GameManager.PointerLocation.BLUEPRINTS:
+                    transform.position = startPosition;
+                    break;
+                case GameManager.PointerLocation.SELECTION:
+                    GetBackToyPart();
+                    break;
+            }
         }
-        dragging = false;
+    }
+
+    private void GetBackToyPart()
+    {
+        toyPart.GetBackToyPart();
     }
 }

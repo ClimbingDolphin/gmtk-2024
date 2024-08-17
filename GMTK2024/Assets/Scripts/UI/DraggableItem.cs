@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] private Image itemImage;
+    [SerializeField] private ToyScrollItem toyScrollItem;
 
     private Transform originParent;
 
@@ -20,7 +21,8 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
     public void OnDrag(PointerEventData eventData)
     {
-        transform.position = Input.mousePosition;
+        transform.position = Vector3.Scale(Camera.main.ScreenToWorldPoint(Input.mousePosition), new Vector3(1f, 1f, 0f));
+        Debug.Log(transform.position);
     }
 
     public void OnEndDrag(PointerEventData eventData)
@@ -29,7 +31,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
         switch (GameManager.Instance.GetPointerLocation())
         {
             case GameManager.PointerLocation.WORKSHOP:
-                gameObject.SetActive(false);
+                toyScrollItem.SpawnToy();
                 break;
             case GameManager.PointerLocation.BLUEPRINTS:
                 break;

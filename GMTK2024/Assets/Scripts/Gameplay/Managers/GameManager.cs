@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
         SELECTION
     }
 
+    [SerializeField] private SO_Level level;
+
     private PointerLocation pointerLocation;
 
     private void Awake()
@@ -20,6 +22,11 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Start()
+    {
+        ItemSelection.Instance.InitializeSelection(level.levelDataItems);
     }
 
     public void PointerInWorkshop()
