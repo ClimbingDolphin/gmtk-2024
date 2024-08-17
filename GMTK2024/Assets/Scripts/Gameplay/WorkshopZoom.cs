@@ -33,6 +33,11 @@ public class WorkshopZoom : MonoBehaviour
     {
         float _newScale = Mathf.Clamp((blueprintMaterial.GetFloat("_CellSize") + _scroll * scrollSpeed), scrollMin, scrollMax);
         blueprintMaterial.SetFloat("_CellSize", _newScale);
-        WorkshopManager.Instance.SetScale((_newScale - scrollMin) / (scrollMax - scrollMin));
+        WorkshopManager.Instance.SetScale(GetZoomRatio());
+    }
+
+    public float GetZoomRatio()
+    {
+        return (blueprintMaterial.GetFloat("_CellSize") - scrollMin) / (scrollMax - scrollMin);
     }
 }

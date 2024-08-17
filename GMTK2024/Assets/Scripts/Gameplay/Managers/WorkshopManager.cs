@@ -24,20 +24,20 @@ public class WorkshopManager : MonoBehaviour
         {
             Instance = this;
         }
+        blueprintMaterial = blueprintsBackground.GetComponent<SpriteRenderer>().material;
+        blueprintOffset = blueprintMaterial.GetVector("_GridOffset");
+        blueprintsBackground.position = -blueprintOffset;
     }
 
     private void Start()
     {
-        blueprintMaterial = blueprintsBackground.GetComponent<SpriteRenderer>().material;
-        blueprintOffset = blueprintMaterial.GetVector("_GridOffset");
-        blueprintsBackground.position = -blueprintOffset;
     }
 
     public void AddToyPart(SO_ToyPart _toyPartData, ToyScrollItem _toyScrollItem)
     {
         ToyPart _toyPart = Instantiate(toyPart, blueprintOffset * -1f, Quaternion.identity, toyPartsParent).transform.GetChild(0).GetComponent<ToyPart>();
         _toyPart.transform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3)blueprintOffset + new Vector3(0, 0, 10f);
-        _toyPart.transform.localScale = currentToyPartScale;
+        _toyPart.transform.parent.localScale = currentToyPartScale;
         _toyPart.InitializeItem(_toyPartData);
         _toyPart.SetOriginItem(_toyScrollItem);
     }
@@ -62,5 +62,15 @@ public class WorkshopManager : MonoBehaviour
     {
         currentPickedItem++;
         return currentPickedItem;
+    }
+
+    public float GetGridScale()
+    {
+        return blueprintMaterial.GetFloat("_CellSize");
+    }
+
+    public Vector2 GetGridOffset()
+    {
+        return blueprintOffset;
     }
 }

@@ -30,6 +30,6 @@ public class ToyPart : ToyItem
     public void GetBackToyPart()
     {
         toyScrollItem.gameObject.SetActive(true);
-        gameObject.SetActive(false);
+        Destroy(transform.parent.gameObject);
     }
 }

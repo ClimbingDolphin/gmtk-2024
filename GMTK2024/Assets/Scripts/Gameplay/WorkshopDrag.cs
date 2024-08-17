@@ -7,25 +7,28 @@ public class WorkshopDrag : MonoBehaviour
 {
     [SerializeField] private Camera cam;
 
+    [SerializeField] private WorkshopZoom workshopZoom;
+
     [SerializeField] private SpriteRenderer spriteToMove;
 
-    [SerializeField] private SpriteRenderer mapRenderer;
+    //[SerializeField] private SpriteRenderer mapRenderer;
 
     [SerializeField] private float dragSpeed = .5f;
 
     private Vector3 dragOrigin;
 
-    private float mapMinX, mapMaxX, mapMinY, mapMaxY;
+    [SerializeField] private float mapMinX, mapMaxX, mapMinY, mapMaxY;
+
+    private float MinX, MaxX, MinY, MaxY;
 
     private bool canMoveCamera = true;
 
-    private void Awake()
+    private void Start()
     {
-        mapMinX = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
-        mapMaxX = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
-
-        mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
-        mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
+        MinX = mapMinX - WorkshopManager.Instance.GetGridOffset().x;
+        MaxX = mapMaxX - WorkshopManager.Instance.GetGridOffset().x;
+        MinY = mapMinY - WorkshopManager.Instance.GetGridOffset().y;
+        MaxY = mapMaxY - WorkshopManager.Instance.GetGridOffset().y;
     }
 
     private void Update()
@@ -66,8 +69,9 @@ public class WorkshopDrag : MonoBehaviour
     private Vector3 ClampImage(Vector3 _targetPosition)
     {
 
-        float _newX = Mathf.Clamp(_targetPosition.x, mapMinX, mapMaxX);
-        float _newY = Mathf.Clamp(_targetPosition.y, mapMinY, mapMaxY);
+        float _newX = Mathf.Clamp(_targetPosition.x, (MinX * workshopZoom.GetZoomRatio() + WorkshopManager.Instance.GetGridOffset().x), MaxX * workshopZoom.GetZoomRatio() - WorkshopManager.Instance.GetGridOffset().x);
+        float _newY = Mathf.Clamp(_targetPosition.y, (MinY * workshopZoom.GetZoomRatio() + WorkshopManager.Instance.GetGridOffset().y), MaxY * workshopZoom.GetZoomRatio() - WorkshopManager.Instance.GetGridOffset().y);
+        Debug.Log(new Vector2(MinX * workshopZoom.GetZoomRatio() + WorkshopManager.Instance.GetGridOffset().x, MaxX * workshopZoom.GetZoomRatio() - WorkshopManager.Instance.GetGridOffset().x));
 
         return new Vector3(_newX, _newY, _targetPosition.z);
     }
@@ -76,5 +80,4 @@ public class WorkshopDrag : MonoBehaviour
     {
         canMoveCamera = _canMove;
     }
-
 }
