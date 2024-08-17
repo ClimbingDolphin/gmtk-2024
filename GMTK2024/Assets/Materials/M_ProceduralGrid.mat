@@ -66,12 +66,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CellSize: 1
+    - _CellSize: 0.5
     - _EnableExternalAlpha: 0
     - _GridThickness: 0.05
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _AdditionOffset: {r: -7.619904, g: 3.0578585, b: -0, a: 0}
+    - _AdditionalOffset: {r: 0, g: 0, b: 0, a: 0}
     - _BackgroundColor: {r: 0.12482201, g: 0.47947493, b: 0.8018868, a: 0}
     - _CellSize: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

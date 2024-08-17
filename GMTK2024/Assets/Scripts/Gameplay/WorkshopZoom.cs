@@ -8,7 +8,7 @@ public class WorkshopZoom : MonoBehaviour
     [SerializeField] private float scrollSpeed = 10f;
     [SerializeField] private float defaultZoom = 1f;
     [SerializeField] private float scrollMin, scrollMax;
-    [SerializeField] private Image blueprintBackground;
+    [SerializeField] private SpriteRenderer blueprintBackground;
     private Material blueprintMaterial;
 
     // Start is called before the first frame update
