@@ -9,6 +9,7 @@ public class WorkshopZoom : MonoBehaviour
     [SerializeField] private float defaultZoom = 1f;
     [SerializeField] private float scrollMin, scrollMax;
     [SerializeField] private SpriteRenderer blueprintBackground;
+    [SerializeField] private WorkshopDrag workshopDrag;
     private Material blueprintMaterial;
 
     // Start is called before the first frame update
@@ -23,7 +24,7 @@ public class WorkshopZoom : MonoBehaviour
     void Update()
     {
         float _scroll = Input.GetAxis("Mouse ScrollWheel");
-        if(_scroll != 0f)
+        if(_scroll != 0f && !Input.GetMouseButtonDown(1) && !Input.GetMouseButtonDown(0))
         {
             HandleZoom(_scroll);
         }
@@ -31,9 +32,10 @@ public class WorkshopZoom : MonoBehaviour
 
     private void HandleZoom(float _scroll)
     {
-        float _newScale = Mathf.Clamp((blueprintMaterial.GetFloat("_CellSize") + _scroll * scrollSpeed), scrollMin, scrollMax);
+        float _newScale = Mathf.Clamp(blueprintMaterial.GetFloat("_CellSize") + _scroll * scrollSpeed, scrollMin, scrollMax);
         blueprintMaterial.SetFloat("_CellSize", _newScale);
         WorkshopManager.Instance.SetScale(GetZoomRatio());
+        workshopDrag.MoveBlueprintsBackground(Vector3.zero);
     }
 
     public float GetZoomRatio()

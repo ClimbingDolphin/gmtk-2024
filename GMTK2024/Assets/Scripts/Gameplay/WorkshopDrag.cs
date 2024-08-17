@@ -21,29 +21,31 @@ public class WorkshopDrag : MonoBehaviour
 
     private float MinX, MaxX, MinY, MaxY;
 
-    private bool canMoveCamera = true;
+    private bool canMoveImage = true;
 
     private void Start()
     {
+        spriteToMove.transform.localPosition = WorkshopManager.Instance.GetGridOffset() * workshopZoom.GetZoomRatio();
+        /*
         MinX = mapMinX - WorkshopManager.Instance.GetGridOffset().x;
         MaxX = mapMaxX - WorkshopManager.Instance.GetGridOffset().x;
         MinY = mapMinY - WorkshopManager.Instance.GetGridOffset().y;
-        MaxY = mapMaxY - WorkshopManager.Instance.GetGridOffset().y;
+        MaxY = mapMaxY - WorkshopManager.Instance.GetGridOffset().y;*/
     }
 
     private void Update()
     {
         PanCamera();
 
-        if (Input.GetMouseButtonUp(1) && canMoveCamera == false)
+        if (Input.GetMouseButtonUp(1) && canMoveImage == false && !Input.GetMouseButtonDown(0))
         {
-            canMoveCamera = true;
+            canMoveImage = true;
         }
     }
 
     private void PanCamera()
     {
-        if (canMoveCamera)
+        if (canMoveImage)
         {
             //save position of mouse in world space when drag starts (first time clicked)
 
@@ -56,28 +58,35 @@ public class WorkshopDrag : MonoBehaviour
             if (Input.GetMouseButton(1))
             {
                 Vector3 _difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
-
+                MoveBlueprintsBackground(_difference);
                 //move the camera by that distance
-                Vector3 _oldPos = spriteToMove.transform.position;
-                spriteToMove.transform.position = ClampImage(spriteToMove.transform.position + _difference * dragSpeed);
-                WorkshopManager.Instance.AddBlueprintOffset(spriteToMove.transform.position - _oldPos);
             }
         }
 
     }
 
-    private Vector3 ClampImage(Vector3 _targetPosition)
+    public void MoveBlueprintsBackground(Vector3 _difference)
     {
+        Vector3 _oldPos = spriteToMove.transform.position;
+        spriteToMove.transform.position = ClampImage(spriteToMove.transform.position + _difference * dragSpeed);
+        WorkshopManager.Instance.AddBlueprintOffset(spriteToMove.transform.position - _oldPos);
+    }
 
-        float _newX = Mathf.Clamp(_targetPosition.x, (MinX * workshopZoom.GetZoomRatio() + WorkshopManager.Instance.GetGridOffset().x), MaxX * workshopZoom.GetZoomRatio() - WorkshopManager.Instance.GetGridOffset().x);
-        float _newY = Mathf.Clamp(_targetPosition.y, (MinY * workshopZoom.GetZoomRatio() + WorkshopManager.Instance.GetGridOffset().y), MaxY * workshopZoom.GetZoomRatio() - WorkshopManager.Instance.GetGridOffset().y);
-        Debug.Log(new Vector2(MinX * workshopZoom.GetZoomRatio() + WorkshopManager.Instance.GetGridOffset().x, MaxX * workshopZoom.GetZoomRatio() - WorkshopManager.Instance.GetGridOffset().x));
+    public Vector3 ClampImage(Vector3 _targetPosition)
+    {
+        float _newX = Mathf.Clamp(_targetPosition.x, (MinX - GetOffset().x), MaxX - GetOffset().x);
+        float _newY = Mathf.Clamp(_targetPosition.y, (MinY - GetOffset().y), MaxY - GetOffset().y);
 
         return new Vector3(_newX, _newY, _targetPosition.z);
     }
 
     public void ManageCameraMovement(bool _canMove)
     {
-        canMoveCamera = _canMove;
+        canMoveImage = _canMove;
+    }
+
+    private Vector3 GetOffset()
+    {
+        return WorkshopManager.Instance.GetGridOffset();
     }
 }

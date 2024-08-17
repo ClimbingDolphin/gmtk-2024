@@ -1747,9 +1747,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollSpeed: 3
   defaultZoom: 1
-  scrollMin: 0.5
+  scrollMin: 0.7
   scrollMax: 1.5
   blueprintBackground: {fileID: 1476887456}
+  workshopDrag: {fileID: 1673397242}
 --- !u!114 &1673397242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1766,10 +1767,10 @@ MonoBehaviour:
   workshopZoom: {fileID: 1673397241}
   spriteToMove: {fileID: 1476887456}
   dragSpeed: 0.05
-  mapMinX: -9
-  mapMaxX: 9
-  mapMinY: -8
-  mapMaxY: 8
+  mapMinX: -3
+  mapMaxX: 3
+  mapMinY: -2
+  mapMaxY: 2
 --- !u!1 &1717515535
 GameObject:
   m_ObjectHideFlags: 0
