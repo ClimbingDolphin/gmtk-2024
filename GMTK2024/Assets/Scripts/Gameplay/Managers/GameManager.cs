@@ -5,7 +5,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
-    private bool inWorkshop = false, inBlueprints = false, inSelection = false;
+    public enum PointerLocation
+    {
+        WORKSHOP,
+        BLUEPRINTS,
+        SELECTION
+    }
+
+    private PointerLocation pointerLocation;
 
     private void Awake()
     {
@@ -15,31 +22,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void PointerInWorkshop(bool _result)
+    public void PointerInWorkshop()
     {
-        inWorkshop = _result;
+        pointerLocation = PointerLocation.WORKSHOP;
     }
 
-    public void PointerInBlueprints(bool _result)
+    public void PointerInBlueprints()
     {
-        inWorkshop = _result;
+        pointerLocation = PointerLocation.BLUEPRINTS;
     }
-    public void PointerInSelection(bool _result)
+    public void PointerInSelection()
     {
-        inWorkshop = _result;
-    }
-
-    public bool InWorkshop()
-    {
-        return inWorkshop;
+        pointerLocation = PointerLocation.SELECTION;
     }
 
-    public bool InBlueprints()
+    public PointerLocation GetPointerLocation()
     {
-        return inWorkshop;
-    }
-    public bool InSelection()
-    {
-        return inSelection;
+        return pointerLocation;
     }
 }

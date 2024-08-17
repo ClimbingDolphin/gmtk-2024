@@ -24,7 +24,7 @@ public class SpriteDraggable : MonoBehaviour
     }
     private void OnMouseUp()
     {
-        if (!GameManager.Instance.InWorkshop())
+        if (GameManager.Instance.GetPointerLocation() != GameManager.PointerLocation.WORKSHOP)
         {
             transform.position = startPosition;
         }
