@@ -16,6 +16,7 @@ public class WorkshopManager : MonoBehaviour
     [SerializeField] private Transform transformToScale;
     private Vector2 blueprintOffset;
     private Vector3 currentToyPartScale;
+    private int currentPickedItem = 0;
 
     private void Awake()
     {
@@ -55,5 +56,11 @@ public class WorkshopManager : MonoBehaviour
     {
         blueprintMaterial.SetVector("_AdditionalOffset", (Vector4)(-blueprintsBackground.position - (Vector3)blueprintOffset));
         //blueprintMaterial.SetVector("_AdditionOffset", blueprintMaterial.GetVector("_AdditionOffset") + new Vector4(_offset.x *2, _offset.y*2, 0f, 0f));
+    }
+
+    public int GetCurrentPickedItem()
+    {
+        currentPickedItem++;
+        return currentPickedItem;
     }
 }

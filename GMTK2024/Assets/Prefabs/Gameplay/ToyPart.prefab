@@ -222,6 +222,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toyPart: {fileID: 3669958410755692880}
+  toyVisuals: {fileID: 1023211504266505858}
+  onHoldLayerID: HeldItems
 --- !u!1 &6258729842290092633
 GameObject:
   m_ObjectHideFlags: 0

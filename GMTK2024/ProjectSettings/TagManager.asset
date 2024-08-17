@@ -50,3 +50,9 @@ TagManager:
   - name: SelectionArea
     uniqueID: 2919374021
     locked: 0
+  - name: HeldItems
+    uniqueID: 387949679
+    locked: 0
+  - name: Top
+    uniqueID: 1328809869
+    locked: 0
