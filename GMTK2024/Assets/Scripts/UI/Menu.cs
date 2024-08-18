@@ -9,8 +9,16 @@ public class Menu : MonoBehaviour
     public AudioSource clickSource;
     public AudioClip clickClip;
 
+    [SerializeField] private SO_GameManagingData gameManagingData;
+
     public void playGame()
     {
+        gameManagingData.levelToLoad = 0;
+        SceneManager.LoadSceneAsync("Game");
+    }
+    public void PlayLevel(int _levelToLoad)
+    {
+        gameManagingData.levelToLoad = _levelToLoad;
         SceneManager.LoadSceneAsync("Game");
     }
 

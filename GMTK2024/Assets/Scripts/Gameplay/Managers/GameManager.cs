@@ -5,6 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+
+    [SerializeField] SO_GameManagingData gameManagingData;
+
     public enum PointerLocation
     {
         WORKSHOP,
@@ -19,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public GameState gamestate = GameState.GAME_ON;
 
-    [SerializeField] private SO_Level level;
+    private SO_Level level;
     [SerializeField] private Timer timer;
 
     private PointerLocation pointerLocation;
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        level = gameManagingData.levels[gameManagingData.levelToLoad];
         ItemSelection.Instance.InitializeSelection(level.levelDataItems);
         SheetsManager.Instance.SpawnSheets(level);
         timer.StartTimer((float)GetLevelData().levelDuration);

@@ -1461,8 +1461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bb28d5acbfa0540ac587ae3926a33e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManagingData: {fileID: 11400000, guid: 11f48b11ed6a42444afa98dcae57b54b, type: 2}
   gamestate: 0
-  level: {fileID: 11400000, guid: daf753bcf9c844b42ac5ef428d720ca8, type: 2}
   timer: {fileID: 106911614}
 --- !u!4 &1133850195
 Transform:
