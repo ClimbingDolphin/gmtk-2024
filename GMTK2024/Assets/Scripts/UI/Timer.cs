@@ -31,9 +31,9 @@ public class Timer : MonoBehaviour
             else
             {
                 UpdateTimer(timeLeft);
-                Debug.Log("timer up");
                 timeLeft = 0;
                 timerOn = false;
+                GameManager.Instance.StopGame();
             }
         }
     }

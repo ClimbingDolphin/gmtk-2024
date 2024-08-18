@@ -56,13 +56,13 @@ public class ScoreManager : MonoBehaviour
         }
 
         float _accurateItemsScore = (float)((float)accurateItems / (float)requiredItems) * 100f;
-        float _accuracyPlacement = totalAccuracy / placedItems;
-        float _accuracyLayer = (float)correctlyLayeredItems / (float)placedItems * 100f;
+        float _accuracyPlacement = totalAccuracy / Mathf.Clamp((float)placedItems, 1f, Mathf.Infinity);
+        float _accuracyLayer = (float)correctlyLayeredItems / Mathf.Clamp((float)placedItems, 1f, Mathf.Infinity) * 100f;
         if(_accuracyPlacement >= 95f)
         {
             _accuracyPlacement = 100f;
         }
-        float _accuracyScale = (float)correctlyScaledItems / (float)placedItems * 100f;
+        float _accuracyScale = (float)correctlyScaledItems / Mathf.Clamp((float)placedItems, 1f, Mathf.Infinity) * 100f;
         Debug.Log(_accurateItemsScore + " " + _accuracyPlacement + " " + _accuracyScale + " " + _accuracyLayer);
         text.text = Mathf.Round((_accurateItemsScore * _accuracyPlacement * _accuracyScale * _accuracyLayer)/1000000f).ToString() + "%";
     }
