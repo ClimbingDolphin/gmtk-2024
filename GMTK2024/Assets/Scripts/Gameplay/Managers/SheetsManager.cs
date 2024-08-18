@@ -19,7 +19,16 @@ public class SheetsManager : MonoBehaviour
         foreach(SO_Level.SheetData _sheetData in _levelData.sheetDataList)
         {
            SheetPart _sheet = Instantiate(GameManager.Instance.GetLevelData().sheetPart, _sheetData.sheetStartPosition, Quaternion.identity, transform);
+            _sheet.transform.localScale = GameManager.Instance.GetLevelData().sheetsSize;
             _sheet.SetSprite(_sheetData.sheetSprite);
+        }
+    }
+    public void SetSheetsSortingOrder()
+    {
+        SheetPart[] _sheetParts = GetComponentsInChildren<SheetPart>();
+        for (int i = 0; i < _sheetParts.Length; i++)
+        {
+            _sheetParts[i].SetSortingOrder();
         }
     }
 }

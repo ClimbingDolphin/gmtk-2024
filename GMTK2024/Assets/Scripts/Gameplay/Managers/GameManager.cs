@@ -17,7 +17,8 @@ public class GameManager : MonoBehaviour
     public enum GameState
     {
         GAME_ON,
-        GAME_OFF
+        GAME_OFF,
+        GAME_PAUSED
     }
 
     public GameState gamestate = GameState.GAME_ON;
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        Time.timeScale = 1f;
     }
 
     private void Start()
@@ -41,6 +43,24 @@ public class GameManager : MonoBehaviour
         ItemSelection.Instance.InitializeSelection(level.levelDataItems);
         SheetsManager.Instance.SpawnSheets(level);
         timer.StartTimer((float)GetLevelData().levelDuration);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            switch (gamestate)
+            {
+                case GameState.GAME_PAUSED:
+                    gamestate = GameState.GAME_ON;
+                    Time.timeScale = 1f;
+                    break;
+                default:
+                    gamestate = GameState.GAME_PAUSED;
+                    Time.timeScale = 0f;
+                    break;
+            }
+        }
     }
 
     public void StopGame()

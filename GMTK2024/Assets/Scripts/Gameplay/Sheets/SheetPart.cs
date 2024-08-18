@@ -6,6 +6,10 @@ public class SheetPart : MonoBehaviour
 {
     [SerializeField] protected SpriteRenderer spriteRenderer;
 
+    public void SetSortingOrder()
+    {
+        spriteRenderer.sortingOrder = transform.GetSiblingIndex();
+    }
 
     public virtual void SetSprite(Sprite _sprite)
     {

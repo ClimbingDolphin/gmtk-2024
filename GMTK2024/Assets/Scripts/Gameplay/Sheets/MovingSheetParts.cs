@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class MovingSheetParts : SheetPart
 {
+    [SerializeField] private string onHoldLayerID = "HeldItems";
+
     private bool dragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
     private List<Vector2> points = new List<Vector2>();
     private List<Vector2> simplifiedPoints = new List<Vector2>();
     private PolygonCollider2D polygonCollider2D;
+
+    private int startLayerID;
+    private void Start()
+    {
+        startLayerID = spriteRenderer.sortingLayerID;
+        transform.parent.SetAsLastSibling();
+        WorkshopManager.Instance.SetToysSortingOrder();
+    }
 
     // Update is called once per frame
     void Update()
@@ -28,6 +38,7 @@ public class MovingSheetParts : SheetPart
             startPosition = transform.position;
             offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+        spriteRenderer.sortingLayerID = SortingLayer.NameToID(onHoldLayerID);
     }
 
     private void OnMouseUp()
@@ -47,6 +58,9 @@ public class MovingSheetParts : SheetPart
                     transform.position = startPosition;
                     break;
             }
+            spriteRenderer.sortingLayerID = startLayerID;
+            transform.SetAsLastSibling();
+            SheetsManager.Instance.SetSheetsSortingOrder();
         }
     }
 

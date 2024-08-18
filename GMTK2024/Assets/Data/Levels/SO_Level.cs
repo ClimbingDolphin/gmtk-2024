@@ -28,4 +28,5 @@ public class SO_Level : ScriptableObject
     public int expectedScaleLevel = 1;
     public SheetPart sheetPart;
     public int levelDuration = 60;
+    public Vector3 sheetsSize;
 }

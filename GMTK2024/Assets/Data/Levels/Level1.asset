@@ -18,28 +18,28 @@ MonoBehaviour:
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 2.496148, y: -0.06342435, z: 0}
-      startScaleLevel: 0
+      startScaleLevel: 1
       toyScaleMin: 0.1
       toyScaleMax: 0.35
   - toyPartData: {fileID: 11400000, guid: 108efcdecfdccf7458a6415eee84c43d, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: -0.0330348, y: 1.3568088, z: 0}
-      startScaleLevel: 1
+      startScaleLevel: 2
       toyScaleMin: 0.25
       toyScaleMax: 0.45
   - toyPartData: {fileID: 11400000, guid: d47a9a012093d5d4187f90e59a844d30, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: -2.495519, y: -0.082879305, z: 0}
-      startScaleLevel: 1
+      startScaleLevel: 0
       toyScaleMin: 0.2
       toyScaleMax: 0.5
   - toyPartData: {fileID: 11400000, guid: 683ab7d68522e284ab045d1c926bb8ad, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: -0.17201328, y: -0.002266407, z: 0}
-      startScaleLevel: 0
+      startScaleLevel: 2
       toyScaleMin: 0.35
       toyScaleMax: 0.6
   - toyPartData: {fileID: 11400000, guid: 516a6190de8b75347843d2726529900c, type: 2}
@@ -53,7 +53,7 @@ MonoBehaviour:
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 1.9817643, y: -0.013390422, z: 0}
-      startScaleLevel: 2
+      startScaleLevel: 0
       toyScaleMin: 0.35
       toyScaleMax: 0.6
   - toyPartData: {fileID: 11400000, guid: baad18e2cb12c9c44b8302615f44adf8, type: 2}
@@ -67,21 +67,21 @@ MonoBehaviour:
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 0.27545738, y: -1.4697862, z: 0}
-      startScaleLevel: 0
+      startScaleLevel: 1
       toyScaleMin: 0.35
       toyScaleMax: 0.6
   - toyPartData: {fileID: 11400000, guid: 284bba6f483b4a245811e299a63adebb, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: -0.32988667, y: 2.5538163, z: 0}
-      startScaleLevel: 1
+      startScaleLevel: 2
       toyScaleMin: 0.35
       toyScaleMax: 0.6
   - toyPartData: {fileID: 11400000, guid: 3d85120786c2d0f4da3246db62a3d4a2, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: -0.9085653, y: 2.198969, z: 0}
-      startScaleLevel: 1
+      startScaleLevel: 0
       toyScaleMin: 0.35
       toyScaleMax: 0.6
   - toyPartData: {fileID: 11400000, guid: 40b7e0871247a5c42b33e66fb70d6044, type: 2}
@@ -105,4 +105,5 @@ MonoBehaviour:
   scaleLevels: 2
   expectedScaleLevel: 3
   sheetPart: {fileID: 7445428898419105612, guid: d9ffac6fabd962d4f9d3114328ead420, type: 3}
-  levelDuration: 10
+  levelDuration: 180
+  sheetsSize: {x: 0.8, y: 0.8, z: 1}
