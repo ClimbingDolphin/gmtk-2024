@@ -11,8 +11,16 @@ public class GameManager : MonoBehaviour
         BLUEPRINTS,
         SELECTION
     }
+    public enum GameState
+    {
+        GAME_ON,
+        GAME_OFF
+    }
+
+    public GameState gamestate = GameState.GAME_ON;
 
     [SerializeField] private SO_Level level;
+    [SerializeField] private Timer timer;
 
     private PointerLocation pointerLocation;
 
@@ -28,6 +36,7 @@ public class GameManager : MonoBehaviour
     {
         ItemSelection.Instance.InitializeSelection(level.levelDataItems);
         SheetsManager.Instance.SpawnSheets(level);
+        timer.StartTimer((float)GetLevelData().levelDuration);
     }
 
     public void PointerInWorkshop()

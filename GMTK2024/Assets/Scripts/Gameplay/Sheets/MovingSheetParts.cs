@@ -2,23 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpriteDraggable : MonoBehaviour
+public class MovingSheetParts : SheetPart
 {
-    [SerializeField] private ToyPart toyPart;
-    [SerializeField] private SpriteRenderer toyVisuals;
-    [SerializeField] private string onHoldLayerID;
-
     private bool dragging = false;
     private Vector3 offset;
     private Vector3 startPosition;
-    private int startLayerID;
-    private void Start()
-    {
-        startLayerID = toyVisuals.sortingLayerID;
-        transform.parent.SetAsLastSibling();
-        WorkshopManager.Instance.SetToysSortingOrder();
-        //toyVisuals.sortingOrder = WorkshopManager.Instance.GetCurrentPickedItem();
-    }
+    private List<Vector2> points = new List<Vector2>();
+    private List<Vector2> simplifiedPoints = new List<Vector2>();
+    private PolygonCollider2D polygonCollider2D;
 
     // Update is called once per frame
     void Update()
@@ -31,12 +22,11 @@ public class SpriteDraggable : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if(dragging == false && !Input.GetMouseButtonDown(1) && GameManager.Instance.gamestate == GameManager.GameState.GAME_ON)
+        if (dragging == false && !Input.GetMouseButtonDown(1) && GameManager.Instance.gamestate == GameManager.GameState.GAME_ON)
         {
             dragging = true;
             startPosition = transform.position;
             offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            toyVisuals.sortingLayerID = SortingLayer.NameToID(onHoldLayerID);
         }
     }
 
@@ -45,26 +35,35 @@ public class SpriteDraggable : MonoBehaviour
         if (dragging)
         {
             dragging = false;
-            toyVisuals.sortingLayerID = startLayerID;
-            transform.parent.SetAsLastSibling();
-            WorkshopManager.Instance.SetToysSortingOrder();
             //toyVisuals.sortingOrder = WorkshopManager.Instance.GetCurrentPickedItem();
             switch (GameManager.Instance.GetPointerLocation())
             {
                 case GameManager.PointerLocation.WORKSHOP:
-                    break;
-                case GameManager.PointerLocation.BLUEPRINTS:
                     transform.position = startPosition;
                     break;
+                case GameManager.PointerLocation.BLUEPRINTS:
+                    break;
                 case GameManager.PointerLocation.SELECTION:
-                    GetBackToyPart();
+                    transform.position = startPosition;
                     break;
             }
         }
     }
 
-    private void GetBackToyPart()
+    public override void SetSprite(Sprite _sprite)
     {
-        toyPart.GetBackToyPart();
+        base.SetSprite(_sprite);
+        polygonCollider2D = gameObject.AddComponent<PolygonCollider2D>();
+        UpdatePolygonCollider2D();
+    }
+    public void UpdatePolygonCollider2D(float tolerance = 0.05f)
+    {
+        polygonCollider2D.pathCount = spriteRenderer.sprite.GetPhysicsShapeCount();
+        for (int i = 0; i < polygonCollider2D.pathCount; i++)
+        {
+            spriteRenderer.sprite.GetPhysicsShape(i, points);
+            LineUtility.Simplify(points, tolerance, simplifiedPoints);
+            polygonCollider2D.SetPath(i, simplifiedPoints);
+        }
     }
 }

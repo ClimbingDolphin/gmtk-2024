@@ -26,4 +26,6 @@ public class SO_Level : ScriptableObject
     public SheetData[] sheetDataList;
     public int scaleLevels = 5;
     public int expectedScaleLevel = 1;
+    public SheetPart sheetPart;
+    public int levelDuration = 60;
 }

@@ -104,3 +104,5 @@ MonoBehaviour:
     sheetStartPosition: {x: -2.690272, y: 2.1789887, z: 0}
   scaleLevels: 2
   expectedScaleLevel: 3
+  sheetPart: {fileID: 7445428898419105612, guid: d9ffac6fabd962d4f9d3114328ead420, type: 3}
+  levelDuration: 10

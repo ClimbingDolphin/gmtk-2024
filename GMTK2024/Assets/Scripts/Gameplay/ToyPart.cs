@@ -26,6 +26,7 @@ public class ToyPart : ToyItem
 
     private void OnMouseEnter()
     {
+        if(GameManager.Instance.gamestate == GameManager.GameState.GAME_ON)
         hovered = true;
     }
 
