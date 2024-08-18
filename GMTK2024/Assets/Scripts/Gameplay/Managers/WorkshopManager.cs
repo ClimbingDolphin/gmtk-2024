@@ -15,7 +15,6 @@ public class WorkshopManager : MonoBehaviour
     [SerializeField] private float minimumTransformScale = .5f;
     [SerializeField] private Transform transformToScale;
     private Vector2 blueprintOffset;
-    private int currentPickedItem = 0;
 
     private void Awake()
     {
@@ -26,10 +25,6 @@ public class WorkshopManager : MonoBehaviour
         blueprintMaterial = blueprintsBackground.GetComponent<SpriteRenderer>().material;
         blueprintOffset = blueprintMaterial.GetVector("_GridOffset");
         blueprintsBackground.position = -blueprintOffset;
-    }
-
-    private void Start()
-    {
     }
 
     public void AddToyPart(SO_ToyPart _toyPartData, ToyScrollItem _toyScrollItem, ToyGameData _toyGameData)
@@ -46,12 +41,6 @@ public class WorkshopManager : MonoBehaviour
         //blueprintMaterial.SetVector("_AdditionOffset", blueprintMaterial.GetVector("_AdditionOffset") + new Vector4(_offset.x *2, _offset.y*2, 0f, 0f));
     }
 
-    public int GetCurrentPickedItem()
-    {
-        currentPickedItem++;
-        return currentPickedItem;
-    }
-
     public float GetGridScale()
     {
         return blueprintMaterial.GetFloat("_CellSize");
@@ -60,5 +49,14 @@ public class WorkshopManager : MonoBehaviour
     public Vector2 GetGridOffset()
     {
         return blueprintOffset;
+    }
+
+    public void SetToysSortingOrder()
+    {
+        ToyPart[] _toyParts = GetComponentsInChildren<ToyPart>();
+        for (int i = 0; i<_toyParts.Length; i++)
+        {
+            _toyParts[i].SetSortingOrder();
+        }
     }
 }

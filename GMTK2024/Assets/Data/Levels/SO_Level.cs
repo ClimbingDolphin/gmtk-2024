@@ -10,8 +10,22 @@ public class SO_Level : ScriptableObject
     {
         public SO_ToyPart toyPartData;
         public ToyGameData toyGameData;
-
     }
 
+    [System.Serializable]
+    public class SheetData
+    {
+        public Sprite sheetSprite;
+        public Vector3 sheetStartPosition;
+    }
+
+    public float toyScale = .5f;
+    //public float minimumScale = .3f;
+    //public float maximumScale = .7f;
     public ItemData[] levelDataItems;
+    public SheetData[] sheetDataList;
+    public int scaleLevels = 5;
+    public int expectedScaleLevel = 1;
+    public SheetPart sheetPart;
+    public int levelDuration = 60;
 }

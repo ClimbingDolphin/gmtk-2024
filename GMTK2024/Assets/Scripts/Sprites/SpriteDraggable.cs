@@ -15,6 +15,9 @@ public class SpriteDraggable : MonoBehaviour
     private void Start()
     {
         startLayerID = toyVisuals.sortingLayerID;
+        transform.parent.SetAsLastSibling();
+        WorkshopManager.Instance.SetToysSortingOrder();
+        //toyVisuals.sortingOrder = WorkshopManager.Instance.GetCurrentPickedItem();
     }
 
     // Update is called once per frame
@@ -25,9 +28,10 @@ public class SpriteDraggable : MonoBehaviour
             transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + offset;
         }
     }
+
     private void OnMouseDown()
     {
-        if(dragging == false && !Input.GetMouseButtonDown(1))
+        if(dragging == false && !Input.GetMouseButtonDown(1) && GameManager.Instance.gamestate == GameManager.GameState.GAME_ON)
         {
             dragging = true;
             startPosition = transform.position;
@@ -42,7 +46,9 @@ public class SpriteDraggable : MonoBehaviour
         {
             dragging = false;
             toyVisuals.sortingLayerID = startLayerID;
-            toyVisuals.sortingOrder = WorkshopManager.Instance.GetCurrentPickedItem();
+            transform.parent.SetAsLastSibling();
+            WorkshopManager.Instance.SetToysSortingOrder();
+            //toyVisuals.sortingOrder = WorkshopManager.Instance.GetCurrentPickedItem();
             switch (GameManager.Instance.GetPointerLocation())
             {
                 case GameManager.PointerLocation.WORKSHOP:

@@ -76,6 +76,7 @@ Material:
     - _AdditionalOffset: {r: 0, g: 0, b: 0, a: 0}
     - _BackgroundColor: {r: 0.12482201, g: 0.47947493, b: 0.8018868, a: 0}
     - _CellSize: {r: 1, g: 1, b: 0, a: 0}
+    - _CenterColor: {r: 0.7411765, g: 0.8745098, b: 0.8784314, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _GridColor: {r: 0.5222944, g: 0.7329892, b: 0.9150943, a: 0}

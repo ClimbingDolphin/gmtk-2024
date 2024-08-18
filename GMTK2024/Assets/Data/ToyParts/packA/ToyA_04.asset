@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51073382f3b9b044db0759ea486ae2ed, type: 3}
   m_Name: ToyA_04
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  id: 
+  sprite: {fileID: 21300000, guid: 6c8ecfef2d1fdd743bc79d56c1604bf1, type: 3}
+  id: ae120ad5-1b4f-4696-8170-6a2bfca92e8c
+  overrideCollision: 0
+  radiusCollision: 5
+  removeCollisions: 1
+  collisionSize: 1
