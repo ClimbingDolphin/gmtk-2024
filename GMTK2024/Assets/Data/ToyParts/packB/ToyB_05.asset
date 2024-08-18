@@ -14,7 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 0aeb727aadf990c4fb1135c3d9a2ccbd, type: 3}
   id: 4a52c0a5-ee18-4fa4-8bfd-cd84be465e58
-  overrideCollision: 0
-  radiusCollision: 5
-  removeCollisions: 0
-  collisionSize: 1
+  minimumLayer: 5

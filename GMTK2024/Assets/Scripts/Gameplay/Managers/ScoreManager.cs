@@ -16,6 +16,7 @@ public class ScoreManager : MonoBehaviour
     private int placedItems = 0;
     private float totalAccuracy = 0f;
     private int correctlyScaledItems = 0;
+    private int correctlyLayeredItems = 0;
 
     private void Awake()
     {
@@ -46,18 +47,23 @@ public class ScoreManager : MonoBehaviour
             {
                 correctlyScaledItems++;
             }
+            if (_toyPart.GetCorrectlyLayered())
+            {
+                correctlyLayeredItems++;
+            }
             placedItems++;
             totalAccuracy += _toyPart.GetPositionAccuracy();
         }
 
         float _accurateItemsScore = (float)((float)accurateItems / (float)requiredItems) * 100f;
         float _accuracyPlacement = totalAccuracy / placedItems;
+        float _accuracyLayer = (float)correctlyLayeredItems / (float)placedItems * 100f;
         if(_accuracyPlacement >= 95f)
         {
             _accuracyPlacement = 100f;
         }
         float _accuracyScale = (float)correctlyScaledItems / (float)placedItems * 100f;
-        Debug.Log(_accurateItemsScore + " " + _accuracyPlacement + " " + _accuracyScale);
-        text.text = Mathf.Round((_accurateItemsScore * _accuracyPlacement * _accuracyScale)/10000f).ToString() + "%";
+        Debug.Log(_accurateItemsScore + " " + _accuracyPlacement + " " + _accuracyScale + " " + _accuracyLayer);
+        text.text = Mathf.Round((_accurateItemsScore * _accuracyPlacement * _accuracyScale * _accuracyLayer)/1000000f).ToString() + "%";
     }
 }

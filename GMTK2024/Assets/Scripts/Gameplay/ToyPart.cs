@@ -121,12 +121,17 @@ public class ToyPart : ToyItem
 
     public float GetPositionAccuracy()
     {
-        return Mathf.Round(Mathf.Clamp(2 - Vector2.Distance(transform.localPosition, toyGameData.expectedPosition), 0f, 2f) / 2f * 100f);
+        return Mathf.Round(Mathf.Clamp(2.5f - Vector2.Distance(transform.localPosition, toyGameData.expectedPosition), 0f, 2.5f) / 2.5f * 100f);
     }
 
     public bool GetCorrectlyScaled()
     {
         return transform.localScale.x == GameManager.Instance.GetLevelData().toyScale;
+    }
+
+    public bool GetCorrectlyLayered()
+    {
+        return spriteRenderer.sortingOrder >= toyPartData.minimumLayer;
     }
 
     public void SetSortingOrder()
