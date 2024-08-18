@@ -12,34 +12,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe7ad745d41a984981b4791de59e1dc, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
+  toyScale: 0.5
+  minimumScale: 0.25
+  maximumScale: 0.6
   levelDataItems:
   - toyPartData: {fileID: 11400000, guid: 18d59e0c0e30a6448b614c31430fc6f1, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 0, y: 0, z: 0}
       expectedScale: {x: 0, y: 0, z: 0}
+      startScaleLevel: 0
   - toyPartData: {fileID: 11400000, guid: 18d59e0c0e30a6448b614c31430fc6f1, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 0, y: 0, z: 0}
       expectedScale: {x: 0, y: 0, z: 0}
+      startScaleLevel: 0
   - toyPartData: {fileID: 11400000, guid: 18d59e0c0e30a6448b614c31430fc6f1, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 0, y: 0, z: 0}
       expectedScale: {x: 0, y: 0, z: 0}
+      startScaleLevel: 0
   - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
     toyGameData:
       isRequired: 1
       expectedPosition: {x: 0, y: 0, z: 0}
       expectedScale: {x: 0, y: 0, z: 0}
+      startScaleLevel: 0
   - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
     toyGameData:
       isRequired: 0
       expectedPosition: {x: 0, y: 0, z: 0}
       expectedScale: {x: 0, y: 0, z: 0}
+      startScaleLevel: 0
   - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
     toyGameData:
       isRequired: 0
       expectedPosition: {x: 0, y: 0, z: 0}
       expectedScale: {x: 0, y: 0, z: 0}
+      startScaleLevel: 0
+  scaleLevels: 5
+  expectedScaleLevel: 1

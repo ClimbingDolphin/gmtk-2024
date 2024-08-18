@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51073382f3b9b044db0759ea486ae2ed, type: 3}
   m_Name: ToyA_08
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  id: 
+  sprite: {fileID: 21300000, guid: aa7c7b3a499f3f643ae3421b7a3bcc53, type: 3}
+  id: f7927f4b-df49-4567-9bcb-b83ca2f1a613

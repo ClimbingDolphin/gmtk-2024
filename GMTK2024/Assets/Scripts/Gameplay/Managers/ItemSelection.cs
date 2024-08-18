@@ -27,6 +27,9 @@ public class ItemSelection : MonoBehaviour
         {
             totalItems++;
             ToyScrollItem _scrollItem = Instantiate(scrollItem, Vector3.zero, Quaternion.identity, content);
+            int _scaleLevel = Random.Range(0, GameManager.Instance.GetLevelData().scaleLevels + 1);
+            ToyGameData _newToyData = _itemData.toyGameData;
+            _newToyData.startScaleLevel = _scaleLevel;
             _scrollItem.InitializeItem(_itemData.toyPartData, _itemData.toyGameData);
             if (_itemData.toyGameData.isRequired)
             {

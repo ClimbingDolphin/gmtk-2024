@@ -16,4 +16,9 @@ public class SO_ToyPart : ScriptableObject
     [Header("Item Data")]
     public string id;
 
+    public bool overrideCollision = false;
+    public float radiusCollision = 5f;
+    public bool removeCollisions = false;
+    public int collisionSize = 1;
+
 }

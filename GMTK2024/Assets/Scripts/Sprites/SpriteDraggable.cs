@@ -15,6 +15,7 @@ public class SpriteDraggable : MonoBehaviour
     private void Start()
     {
         startLayerID = toyVisuals.sortingLayerID;
+        toyVisuals.sortingOrder = WorkshopManager.Instance.GetCurrentPickedItem();
     }
 
     // Update is called once per frame

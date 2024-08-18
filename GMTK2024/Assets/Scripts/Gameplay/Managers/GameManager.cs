@@ -52,4 +52,9 @@ public class GameManager : MonoBehaviour
     {
         ScoreManager.Instance.CheckResult();
     }
+
+    public SO_Level GetLevelData()
+    {
+        return level;
+    }
 }

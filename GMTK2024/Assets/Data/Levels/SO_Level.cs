@@ -13,5 +13,10 @@ public class SO_Level : ScriptableObject
 
     }
 
+    public float toyScale = .5f;
+    public float minimumScale = .3f;
+    public float maximumScale = .7f;
     public ItemData[] levelDataItems;
+    public int scaleLevels = 5;
+    public int expectedScaleLevel = 1;
 }
