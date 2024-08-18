@@ -15,7 +15,6 @@ public class WorkshopManager : MonoBehaviour
     [SerializeField] private float minimumTransformScale = .5f;
     [SerializeField] private Transform transformToScale;
     private Vector2 blueprintOffset;
-    private Vector3 currentToyPartScale;
     private int currentPickedItem = 0;
 
     private void Awake()
@@ -33,23 +32,12 @@ public class WorkshopManager : MonoBehaviour
     {
     }
 
-    public void AddToyPart(SO_ToyPart _toyPartData, ToyScrollItem _toyScrollItem)
+    public void AddToyPart(SO_ToyPart _toyPartData, ToyScrollItem _toyScrollItem, ToyGameData _toyGameData)
     {
         ToyPart _toyPart = Instantiate(toyPart, blueprintOffset * -1f, Quaternion.identity, toyPartsParent).transform.GetChild(0).GetComponent<ToyPart>();
         _toyPart.transform.localPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition) + (Vector3)blueprintOffset + new Vector3(0, 0, 10f);
-        _toyPart.transform.parent.localScale = currentToyPartScale;
-        _toyPart.InitializeItem(_toyPartData);
+        _toyPart.InitializeItem(_toyPartData, _toyGameData);
         _toyPart.SetOriginItem(_toyScrollItem);
-    }
-
-    public void SetScale(float _newScale)
-    {
-        currentToyPartScale = new Vector3(_newScale + minimumTransformScale, _newScale + minimumTransformScale, 1f);
-
-        foreach (Transform _transform in toyPartsParent)
-        {
-            _transform.localScale = currentToyPartScale;
-        }
     }
 
     public void AddBlueprintOffset(Vector3 _offset)

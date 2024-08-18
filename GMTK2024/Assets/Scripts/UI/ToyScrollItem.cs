@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class ToyScrollItem : ToyItem
 {
     [SerializeField] private Image image;
-    public override void InitializeItem(SO_ToyPart _toyPartData)
+    public override void InitializeItem(SO_ToyPart _toyPartData, ToyGameData _toyGameData)
     {
-        base.InitializeItem(_toyPartData);
+        base.InitializeItem(_toyPartData, _toyGameData);
 
-        toyPartData = _toyPartData;
         if (toyPartData.sprite != null)
         {
             image.sprite = toyPartData.sprite;
@@ -25,7 +24,7 @@ public class ToyScrollItem : ToyItem
 
     public void SpawnToy()
     {
-        WorkshopManager.Instance.AddToyPart(toyPartData, this);
+        WorkshopManager.Instance.AddToyPart(toyPartData, this, toyGameData);
         gameObject.SetActive(false);
     }
 }

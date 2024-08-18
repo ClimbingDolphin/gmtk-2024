@@ -9,7 +9,9 @@ public class SO_Level : ScriptableObject
     public class ItemData
     {
         public SO_ToyPart toyPartData;
+        public ToyGameData toyGameData;
 
     }
+
     public ItemData[] levelDataItems;
 }

@@ -10,6 +10,9 @@ public class ItemSelection : MonoBehaviour
 
     [SerializeField] private RectTransform content;
 
+    private int requiredItems = 0;
+    private int totalItems = 0;
+
     private void Awake()
     {
         if (Instance == null)
@@ -22,8 +25,15 @@ public class ItemSelection : MonoBehaviour
     {
         foreach(SO_Level.ItemData _itemData in _items)
         {
+            totalItems++;
             ToyScrollItem _scrollItem = Instantiate(scrollItem, Vector3.zero, Quaternion.identity, content);
-            _scrollItem.InitializeItem(_itemData.toyPartData);
+            _scrollItem.InitializeItem(_itemData.toyPartData, _itemData.toyGameData);
+            if (_itemData.toyGameData.isRequired)
+            {
+                requiredItems++;
+            }
         }
+
+        ScoreManager.Instance.SetRequiredAndTotalItems(requiredItems, totalItems);
     }
 }

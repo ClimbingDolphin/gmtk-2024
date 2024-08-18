@@ -47,4 +47,9 @@ public class GameManager : MonoBehaviour
     {
         return pointerLocation;
     }
+
+    public void VerifyResult()
+    {
+        ScoreManager.Instance.CheckResult();
+    }
 }

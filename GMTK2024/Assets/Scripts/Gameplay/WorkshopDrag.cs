@@ -7,8 +7,6 @@ public class WorkshopDrag : MonoBehaviour
 {
     [SerializeField] private Camera cam;
 
-    [SerializeField] private WorkshopZoom workshopZoom;
-
     [SerializeField] private SpriteRenderer spriteToMove;
 
     //[SerializeField] private SpriteRenderer mapRenderer;
@@ -25,7 +23,7 @@ public class WorkshopDrag : MonoBehaviour
 
     private void Start()
     {
-        spriteToMove.transform.localPosition = WorkshopManager.Instance.GetGridOffset() * workshopZoom.GetZoomRatio();
+        spriteToMove.transform.localPosition = WorkshopManager.Instance.GetGridOffset();
         /*
         MinX = mapMinX - WorkshopManager.Instance.GetGridOffset().x;
         MaxX = mapMaxX - WorkshopManager.Instance.GetGridOffset().x;

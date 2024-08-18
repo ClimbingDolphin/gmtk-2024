@@ -14,8 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelDataItems:
   - toyPartData: {fileID: 11400000, guid: 18d59e0c0e30a6448b614c31430fc6f1, type: 2}
-  - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0, y: 0, z: 0}
+      expectedScale: {x: 0, y: 0, z: 0}
   - toyPartData: {fileID: 11400000, guid: 18d59e0c0e30a6448b614c31430fc6f1, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0, y: 0, z: 0}
+      expectedScale: {x: 0, y: 0, z: 0}
   - toyPartData: {fileID: 11400000, guid: 18d59e0c0e30a6448b614c31430fc6f1, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0, y: 0, z: 0}
+      expectedScale: {x: 0, y: 0, z: 0}
   - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0, y: 0, z: 0}
+      expectedScale: {x: 0, y: 0, z: 0}
   - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
+    toyGameData:
+      isRequired: 0
+      expectedPosition: {x: 0, y: 0, z: 0}
+      expectedScale: {x: 0, y: 0, z: 0}
+  - toyPartData: {fileID: 11400000, guid: 53b8aae093157e44b91bf0784cd34610, type: 2}
+    toyGameData:
+      isRequired: 0
+      expectedPosition: {x: 0, y: 0, z: 0}
+      expectedScale: {x: 0, y: 0, z: 0}
