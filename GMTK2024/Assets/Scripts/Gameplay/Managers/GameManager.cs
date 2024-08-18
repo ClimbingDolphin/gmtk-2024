@@ -39,6 +39,12 @@ public class GameManager : MonoBehaviour
         timer.StartTimer((float)GetLevelData().levelDuration);
     }
 
+    public void StopGame()
+    {
+        gamestate = GameState.GAME_OFF;
+        VerifyResult();
+    }
+
     public void PointerInWorkshop()
     {
         pointerLocation = PointerLocation.WORKSHOP;

@@ -6,6 +6,7 @@ public class ToyPart : ToyItem
 {
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private float scrollSpeed = 10f;
+    [SerializeField] private Animator anim;
 
     private ToyScrollItem toyScrollItem;
     private bool isRequired = false;
@@ -27,12 +28,16 @@ public class ToyPart : ToyItem
     private void OnMouseEnter()
     {
         if(GameManager.Instance.gamestate == GameManager.GameState.GAME_ON)
-        hovered = true;
+        {
+            hovered = true;
+            anim.SetBool("Hover", true);
+        }
     }
 
     private void OnMouseExit()
     {
         hovered = false;
+        anim.SetBool("Hover", false);
     }
 
     private void HandleScale(float _scroll)
