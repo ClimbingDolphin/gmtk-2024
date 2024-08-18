@@ -10,15 +10,23 @@ public class Menu : MonoBehaviour
     public AudioClip clickClip;
 
     [SerializeField] private SO_GameManagingData gameManagingData;
+    [SerializeField] private Animator anim;
 
     public void playGame()
     {
         gameManagingData.levelToLoad = 0;
-        SceneManager.LoadSceneAsync("Game");
+        StartCoroutine(GameTransition());
     }
     public void PlayLevel(int _levelToLoad)
     {
         gameManagingData.levelToLoad = _levelToLoad;
+        StartCoroutine(GameTransition());
+    }
+
+    IEnumerator GameTransition()
+    {
+        anim.SetTrigger("TransitionOut");
+        yield return new WaitForSeconds(2f);
         SceneManager.LoadSceneAsync("Game");
     }
 
