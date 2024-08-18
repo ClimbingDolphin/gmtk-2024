@@ -47,6 +47,9 @@ TagManager:
   - name: BlueprintArea
     uniqueID: 779720711
     locked: 0
+  - name: BlueprintParts
+    uniqueID: 3407952779
+    locked: 0
   - name: SelectionArea
     uniqueID: 2919374021
     locked: 0

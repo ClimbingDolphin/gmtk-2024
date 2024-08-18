@@ -44,7 +44,7 @@ public class ToyPart : ToyItem
     private float GetScaleFromScaleLevel(int _scaleLevel)
     {
         SO_Level _levelData = GameManager.Instance.GetLevelData();
-        return (_levelData.maximumScale - _levelData.minimumScale) / _levelData.scaleLevels * _scaleLevel + _levelData.minimumScale;
+        return (toyGameData.toyScaleMax - toyGameData.toyScaleMin) / _levelData.scaleLevels * _scaleLevel + toyGameData.toyScaleMin;
     }
 
     private void SetNewScale()
@@ -100,6 +100,7 @@ public class ToyPart : ToyItem
             polygonCollider2D.SetPath(i, simplifiedPoints);
         }
         //polygonCollider2D.pathCount = 1;
+        /*
         if (toyPartData.removeCollisions)
         {
             polygonCollider2D.pathCount = toyPartData.collisionSize;
@@ -109,7 +110,7 @@ public class ToyPart : ToyItem
             Destroy(polygonCollider2D);
             CircleCollider2D _circleCollision = gameObject.AddComponent<CircleCollider2D>();
             _circleCollision.radius = toyPartData.radiusCollision;
-        }
+        }*/
     }
 
     public float GetPositionAccuracy()
@@ -119,7 +120,12 @@ public class ToyPart : ToyItem
 
     public bool GetCorrectlyScaled()
     {
-        return currentScaleLevel == GameManager.Instance.GetLevelData().expectedScaleLevel;
+        return transform.localScale.x == GameManager.Instance.GetLevelData().toyScale;
+    }
+
+    public void SetSortingOrder()
+    {
+        spriteRenderer.sortingOrder = transform.parent.GetSiblingIndex();
     }
 
 }

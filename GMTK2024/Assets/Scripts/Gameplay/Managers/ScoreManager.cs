@@ -56,7 +56,7 @@ public class ScoreManager : MonoBehaviour
         {
             _accuracyPlacement = 100f;
         }
-        float _accuracyScale = correctlyScaledItems / placedItems * 100f;
+        float _accuracyScale = (float)correctlyScaledItems / (float)placedItems * 100f;
         Debug.Log(_accurateItemsScore + " " + _accuracyPlacement + " " + _accuracyScale);
         text.text = Mathf.Round((_accurateItemsScore * _accuracyPlacement * _accuracyScale)/10000f).ToString() + "%";
     }

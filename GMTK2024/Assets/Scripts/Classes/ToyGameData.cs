@@ -7,6 +7,7 @@ public class ToyGameData
 {
     public bool isRequired;
     public Vector3 expectedPosition;
-    public Vector3 expectedScale;
     public int startScaleLevel;
+    public float toyScaleMin;
+    public float toyScaleMax;
 }

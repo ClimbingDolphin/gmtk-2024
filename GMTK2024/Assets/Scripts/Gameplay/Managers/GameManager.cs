@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         ItemSelection.Instance.InitializeSelection(level.levelDataItems);
+        SheetsManager.Instance.SpawnSheets(level);
     }
 
     public void PointerInWorkshop()
