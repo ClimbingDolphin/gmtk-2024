@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fe7ad745d41a984981b4791de59e1dc, type: 3}
+  m_Name: Level3
+  m_EditorClassIdentifier: 
+  toyScale: 0.3
+  levelDataItems:
+  - toyPartData: {fileID: 11400000, guid: 6bfaba837b0ed074b945e35f5c0bd63c, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -0.966553, y: 1.0299221, z: 0}
+      startScaleLevel: 1
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: 5ee5788933d95164f914016b8e12ee14, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -0.9554291, y: 0.039934278, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 0.8
+  - toyPartData: {fileID: 11400000, guid: 45cf952aa4641054792b84eba8cd3e00, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 1.0467339, y: 0.064430594, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 0.8
+  - toyPartData: {fileID: 11400000, guid: a735fa02e0e454f4a92a68faf93380a2, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0.01839685, y: 0.6953307, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.15
+      toyScaleMax: 0.45
+  - toyPartData: {fileID: 11400000, guid: 75acd78f2881ea646840df7aaafc7c70, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0.01582098, y: -0.40253842, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: 7b7c45c1b1b687d40ae5e2084b019201, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0.007272243, y: 0.6231359, z: 0}
+      startScaleLevel: 1
+      toyScaleMin: 0.15
+      toyScaleMax: 0.45
+  - toyPartData: {fileID: 11400000, guid: 536f2f43ff4e2414bbac029da9441f0d, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -0.0038518906, y: -0.9000005, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.1
+      toyScaleMax: 0.3
+  - toyPartData: {fileID: 11400000, guid: a788743afda7a194a8973851575755c5, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -0.02055931, y: -2.3452287, z: 0}
+      startScaleLevel: 1
+      toyScaleMin: 0.3
+      toyScaleMax: 1
+  - toyPartData: {fileID: 11400000, guid: cff60c9e8e09ed147985f76bddfcbf98, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -0.003850937, y: -1.7171206, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: 8a16e8fbc0e48524b9b7b89582bf7ce3, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 1.2854772, y: -2.2703297, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.3
+      toyScaleMax: 1
+  - toyPartData: {fileID: 11400000, guid: 94af2fe067817c0448f125d95bf3c420, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 1.538353, y: -2.6702979, z: 0}
+      startScaleLevel: 1
+      toyScaleMin: 0.3
+      toyScaleMax: 1
+  - toyPartData: {fileID: 11400000, guid: 58e20ff7d4cab1443bb54efb3fa2ecbe, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -1.3225036, y: -2.2515016, z: 0}
+      startScaleLevel: 1
+      toyScaleMin: 0.3
+      toyScaleMax: 1
+  - toyPartData: {fileID: 11400000, guid: 55f4c730991d00142924f4a777763e36, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -1.578345, y: -2.651947, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 1
+  - toyPartData: {fileID: 11400000, guid: 515af609427814c4480725e331fa51e5, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 1.5523968, y: 2.413106, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.15
+      toyScaleMax: 0.45
+  - toyPartData: {fileID: 11400000, guid: ac36ad12e551fcd4fa1fc24b85f456c0, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -1.5632355, y: 2.3967452, z: 0}
+      startScaleLevel: 1
+      toyScaleMin: 0.15
+      toyScaleMax: 0.45
+  - toyPartData: {fileID: 11400000, guid: 1c383fb2bab106b4b9309765f0b290e7, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0.0011878014, y: 0.80745316, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.2
+      toyScaleMax: 0.4
+  - toyPartData: {fileID: 11400000, guid: aa29520ed731f5849abf33acd1410cae, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 1.0023026, y: 1.063293, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  sheetDataList:
+  - sheetSprite: {fileID: 21300000, guid: 21f69737046b02045985ade0c4fe5c1e, type: 3}
+    sheetStartPosition: {x: -5.2, y: 0.9, z: 0}
+  scaleLevels: 2
+  expectedScaleLevel: 3
+  sheetPart: {fileID: 4758619501544435412, guid: dd494751eef9a2f41816411ab4fcb921, type: 3}
+  levelDuration: 180
+  sheetsSize: {x: 1, y: 1, z: 1}

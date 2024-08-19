@@ -56,6 +56,10 @@ public class ToyPart : ToyItem
     private void SetNewScale()
     {
         float _newScale = GetScaleFromScaleLevel(currentScaleLevel);
+        if (transform.localScale != new Vector3(_newScale, _newScale, 1f))
+        {
+            WorkshopManager.Instance.ItemScale();
+        }
         transform.localScale = new Vector3(_newScale, _newScale, 1f);
     }
 

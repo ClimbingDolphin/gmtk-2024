@@ -14,6 +14,12 @@ public class WorkshopManager : MonoBehaviour
 
     [SerializeField] private float minimumTransformScale = .5f;
     [SerializeField] private Transform transformToScale;
+
+    [SerializeField] private AudioSource itemDrop;
+    [SerializeField] private AudioSource itemGrab;
+    [SerializeField] private AudioSource itemPlace;
+    [SerializeField] private AudioSource itemScale;
+
     private Vector2 blueprintOffset;
 
     private void Awake()
@@ -58,5 +64,22 @@ public class WorkshopManager : MonoBehaviour
         {
             _toyParts[i].SetSortingOrder();
         }
+    }
+
+    public void ItemDrop()
+    {
+        itemDrop.Play();
+    }
+    public void ItemGrab()
+    {
+        itemGrab.Play();
+    }
+    public void ItemPlace()
+    {
+        itemPlace.Play();
+    }
+    public void ItemScale()
+    {
+        itemScale.Play();
     }
 }

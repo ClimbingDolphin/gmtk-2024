@@ -56,6 +56,9 @@ TagManager:
   - name: HeldItems
     uniqueID: 387949679
     locked: 0
+  - name: Pause
+    uniqueID: 3719172189
+    locked: 0
   - name: Top
     uniqueID: 1328809869
     locked: 0

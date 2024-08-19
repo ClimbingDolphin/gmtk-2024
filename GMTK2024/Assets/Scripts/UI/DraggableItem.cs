@@ -39,6 +39,7 @@ public class DraggableItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
             switch (GameManager.Instance.GetPointerLocation())
             {
                 case GameManager.PointerLocation.WORKSHOP:
+                    WorkshopManager.Instance.ItemDrop();
                     toyScrollItem.SpawnToy();
                     break;
                 case GameManager.PointerLocation.BLUEPRINTS:

@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     private bool timerOn = false;
 
     [SerializeField] private TextMeshProUGUI text;
+    [SerializeField] private AudioSource timeExpired;
 
     // Start is called before the first frame update
     public void StartTimer(float _targetTime)
@@ -33,6 +34,7 @@ public class Timer : MonoBehaviour
                 UpdateTimer(timeLeft);
                 timeLeft = 0;
                 timerOn = false;
+                timeExpired.Play();
                 GameManager.Instance.StopGame();
             }
         }

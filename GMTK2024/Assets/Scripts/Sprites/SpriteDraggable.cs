@@ -33,6 +33,7 @@ public class SpriteDraggable : MonoBehaviour
     {
         if(dragging == false && !Input.GetMouseButtonDown(1) && GameManager.Instance.gamestate == GameManager.GameState.GAME_ON)
         {
+            WorkshopManager.Instance.ItemGrab();
             dragging = true;
             startPosition = transform.position;
             offset = transform.position - Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -52,6 +53,7 @@ public class SpriteDraggable : MonoBehaviour
             switch (GameManager.Instance.GetPointerLocation())
             {
                 case GameManager.PointerLocation.WORKSHOP:
+                    WorkshopManager.Instance.ItemDrop();
                     break;
                 case GameManager.PointerLocation.BLUEPRINTS:
                     transform.position = startPosition;

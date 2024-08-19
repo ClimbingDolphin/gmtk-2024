@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
     [SerializeField] SO_GameManagingData gameManagingData;
+    [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private Animator anim;
+    [SerializeField] private AudioSource bgm;
+    [SerializeField] private AudioSource pause;
 
     public enum PointerLocation
     {
@@ -49,17 +54,28 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            switch (gamestate)
-            {
-                case GameState.GAME_PAUSED:
-                    gamestate = GameState.GAME_ON;
-                    Time.timeScale = 1f;
-                    break;
-                default:
-                    gamestate = GameState.GAME_PAUSED;
-                    Time.timeScale = 0f;
-                    break;
-            }
+            Pause();
+        }
+    }
+
+    public void Pause()
+    {
+        switch (gamestate)
+        {
+            case GameState.GAME_PAUSED:
+                gamestate = GameState.GAME_ON;
+                Time.timeScale = 1f;
+                pauseMenu.SetActive(false);
+                bgm.Play();
+                pause.Pause();
+                break;
+            default:
+                gamestate = GameState.GAME_PAUSED;
+                Time.timeScale = 0f;
+                bgm.Pause();
+                pause.Play();
+                pauseMenu.SetActive(true);
+                break;
         }
     }
 
@@ -96,5 +112,18 @@ public class GameManager : MonoBehaviour
     public SO_Level GetLevelData()
     {
         return level;
+    }
+    public void QuitLevel()
+    {
+        pauseMenu.SetActive(false);
+        StartCoroutine(GameTransition());
+    }
+
+    IEnumerator GameTransition()
+    {
+        Time.timeScale = 1f;
+        anim.SetTrigger("TransitionOut");
+        yield return new WaitForSeconds(2.3f);
+        SceneManager.LoadSceneAsync(0);
     }
 }

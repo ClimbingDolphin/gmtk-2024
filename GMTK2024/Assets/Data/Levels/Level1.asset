@@ -12,98 +12,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fe7ad745d41a984981b4791de59e1dc, type: 3}
   m_Name: Level1
   m_EditorClassIdentifier: 
-  toyScale: 0.35
+  toyScale: 0.6
   levelDataItems:
-  - toyPartData: {fileID: 11400000, guid: 5c243ace5d2ba1042adaf7dc7fe67a64, type: 2}
+  - toyPartData: {fileID: 11400000, guid: d8097a8a1fe53ea42ba18fe39f67e1dc, type: 2}
     toyGameData:
       isRequired: 1
-      expectedPosition: {x: 2.496148, y: -0.06342435, z: 0}
+      expectedPosition: {x: 1.1342807, y: 1.0649804, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: 0c86977f85e13e74a8c6a8d39c5a05fc, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -1.8229189, y: -0.5887165, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: 4799f9331149ede45af66a55ea9eabf9, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: -0.82511806, y: 0.07276273, z: 0}
+      startScaleLevel: 0
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: d623a9cb00d388741aecf9bb54ac947d, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0.31715918, y: -0.82217896, z: 0}
       startScaleLevel: 1
-      toyScaleMin: 0.1
-      toyScaleMax: 0.35
-  - toyPartData: {fileID: 11400000, guid: 108efcdecfdccf7458a6415eee84c43d, type: 2}
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: 9e76f38c1808f14459d7384d0eafcb07, type: 2}
     toyGameData:
       isRequired: 1
-      expectedPosition: {x: -0.0330348, y: 1.3568088, z: 0}
-      startScaleLevel: 2
-      toyScaleMin: 0.25
-      toyScaleMax: 0.45
-  - toyPartData: {fileID: 11400000, guid: d47a9a012093d5d4187f90e59a844d30, type: 2}
-    toyGameData:
-      isRequired: 1
-      expectedPosition: {x: -2.495519, y: -0.082879305, z: 0}
+      expectedPosition: {x: -1.9396496, y: -1.8727628, z: 0}
       startScaleLevel: 0
-      toyScaleMin: 0.2
-      toyScaleMax: 0.5
-  - toyPartData: {fileID: 11400000, guid: 683ab7d68522e284ab045d1c926bb8ad, type: 2}
-    toyGameData:
-      isRequired: 1
-      expectedPosition: {x: -0.17201328, y: -0.002266407, z: 0}
-      startScaleLevel: 2
-      toyScaleMin: 0.35
+      toyScaleMin: 0.3
       toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: 516a6190de8b75347843d2726529900c, type: 2}
+  - toyPartData: {fileID: 11400000, guid: 25f811e8a0401044cb5f4b1f6237db92, type: 2}
     toyGameData:
       isRequired: 1
-      expectedPosition: {x: -0.7334244, y: -0.9194558, z: 0}
-      startScaleLevel: 1
-      toyScaleMin: 0.35
-      toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: 175dd67ffa95753429fcca78c4a5502b, type: 2}
-    toyGameData:
-      isRequired: 1
-      expectedPosition: {x: 1.9817643, y: -0.013390422, z: 0}
+      expectedPosition: {x: 0, y: 0, z: 0}
       startScaleLevel: 0
-      toyScaleMin: 0.35
+      toyScaleMin: 0.3
       toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: baad18e2cb12c9c44b8302615f44adf8, type: 2}
+  - toyPartData: {fileID: 11400000, guid: 0e7f7482c21a8784f9767a637f51966a, type: 2}
     toyGameData:
       isRequired: 1
-      expectedPosition: {x: -1.7979665, y: -0.08567178, z: 0}
-      startScaleLevel: 2
-      toyScaleMin: 0.35
-      toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: 81b0eb07f81d1794590b8670c9c2cf4a, type: 2}
-    toyGameData:
-      isRequired: 1
-      expectedPosition: {x: 0.27545738, y: -1.4697862, z: 0}
-      startScaleLevel: 1
-      toyScaleMin: 0.35
-      toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: 284bba6f483b4a245811e299a63adebb, type: 2}
-    toyGameData:
-      isRequired: 1
-      expectedPosition: {x: -0.32988667, y: 2.5538163, z: 0}
-      startScaleLevel: 2
-      toyScaleMin: 0.35
-      toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: 3d85120786c2d0f4da3246db62a3d4a2, type: 2}
-    toyGameData:
-      isRequired: 1
-      expectedPosition: {x: -0.9085653, y: 2.198969, z: 0}
+      expectedPosition: {x: -1.1892698, y: 1.3623914, z: 0}
       startScaleLevel: 0
-      toyScaleMin: 0.35
+      toyScaleMin: 0.3
       toyScaleMax: 0.6
-  - toyPartData: {fileID: 11400000, guid: 40b7e0871247a5c42b33e66fb70d6044, type: 2}
+  - toyPartData: {fileID: 11400000, guid: 0160d1dea6defdc4c8351b477cc14905, type: 2}
     toyGameData:
       isRequired: 1
-      expectedPosition: {x: 0.0032143593, y: 1.4953986, z: 0}
-      startScaleLevel: 0
-      toyScaleMin: 0.35
+      expectedPosition: {x: 0, y: 0, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.3
+      toyScaleMax: 0.6
+  - toyPartData: {fileID: 11400000, guid: feb772b17eb77214eb77b7186409005b, type: 2}
+    toyGameData:
+      isRequired: 1
+      expectedPosition: {x: 0, y: 0, z: 0}
+      startScaleLevel: 2
+      toyScaleMin: 0.3
       toyScaleMax: 0.6
   sheetDataList:
-  - sheetSprite: {fileID: 21300000, guid: 75e1a7cc42310f64f9391f1c15308815, type: 3}
-    sheetStartPosition: {x: -2.8264585, y: 0.019454718, z: 0}
-  - sheetSprite: {fileID: 21300000, guid: be6b400bc9a5d0a459bb4808fdc9634d, type: 3}
-    sheetStartPosition: {x: -7.12607, y: 3.2490265, z: 0}
-  - sheetSprite: {fileID: 21300000, guid: adacdc769adb16e41b59345eeea96065, type: 3}
-    sheetStartPosition: {x: -2.3206215, y: -1.6926075, z: 0}
-  - sheetSprite: {fileID: 21300000, guid: bfe4e5dd568f60543a0966a949f979f8, type: 3}
-    sheetStartPosition: {x: -7.067704, y: -1.6147858, z: 0}
-  - sheetSprite: {fileID: 21300000, guid: 633de37b3b7c26a4e93ac19ea6c754f9, type: 3}
-    sheetStartPosition: {x: -2.690272, y: 2.1789887, z: 0}
+  - sheetSprite: {fileID: 21300000, guid: 21f69737046b02045985ade0c4fe5c1e, type: 3}
+    sheetStartPosition: {x: -5.2, y: 0.9, z: 0}
   scaleLevels: 2
   expectedScaleLevel: 3
-  sheetPart: {fileID: 7445428898419105612, guid: d9ffac6fabd962d4f9d3114328ead420, type: 3}
+  sheetPart: {fileID: 4758619501544435412, guid: dd494751eef9a2f41816411ab4fcb921, type: 3}
   levelDuration: 180
-  sheetsSize: {x: 0.8, y: 0.8, z: 1}
+  sheetsSize: {x: 1, y: 1, z: 1}
